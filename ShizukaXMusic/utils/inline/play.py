@@ -1,7 +1,8 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL
+import sys
 
-## After Edits with Timer Bar
+# After Edits with Timer Bar
 
 
 selections = [
