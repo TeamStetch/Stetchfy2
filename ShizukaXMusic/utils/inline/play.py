@@ -6,11 +6,14 @@ import random
 
 
 selections = [
-    {"start": 0, "duration": 5, "track": "song1.mp3"},
-    {"start": 5, "duration": 3, "track": "song2.mp3"},
-    {"start": 8, "duration": 4, "track": "song3.mp3"},
-    {"start": 12, "duration": 6, "track": "song4.mp3"},
-    {"start": 18, "duration": 4, "track": "song5.mp3"},
+    "◉--------------------",
+    "--◉------------------",
+    "-----◉---------------",
+    "--------◉------------",
+    "-----------◉---------",
+    "--------------◉------",
+    "-----------------◉---",
+    "--------------------◉",
 ]
 
 
