@@ -74,7 +74,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(text="𝙎𝙏𝙀𝙏𝘾𝙃 👿", url=f"https://t.me/STETCH"),
+            InlineKeyboardButton(text="𝙎𝙏𝙀𝙏𝘾𝙃 👿", url=f"{SUPPORT_GROUP}"),
         ],
         [
             InlineKeyboardButton(
@@ -104,10 +104,11 @@ def stream_markup(_, videoid, chat_id):
                 text=_["PL_B_3"],
                 callback_data=f"PanelMarkup None|{chat_id}",
             ),
-            InlineKeyboardButton(text="𝘾𝙃𝘼𝙏 💌", url=f"{SUPPORT_GROUP}"),
+            InlineKeyboardButton(text="𝘾𝙃𝘼𝙏 💌", url=f"https://t.me/TXNX5"),
         ],
     ]
     return buttons
+
 
 
 def telegram_markup(_, chat_id):
@@ -122,11 +123,6 @@ def telegram_markup(_, chat_id):
     ]
     return buttons
 
-
-## By Anon
-close_keyboard = InlineKeyboardMarkup(
-    [[InlineKeyboardButton(text="〆 ᴄʟᴏsᴇ 〆", callback_data="close")]]
-)
 
 ## Search Query Inline
 
