@@ -19,13 +19,13 @@ selections = [
 ]
 
 def stream_markup_timer(_, videoid, chat_id, played, dur):
- for index, selection in enumerate(selections[5:18], start=5):
-        buttons.append(
-         [
+    bar = choice(selections)
+    buttons = [
+        [
             InlineKeyboardButton(
-                text=f"{played} •{selection}• {dur}",
+                text=f"{played} •{bar}• {dur}",
                 callback_data="GetTimer",
-            ),
+            )
         ],
         [
             InlineKeyboardButton(
