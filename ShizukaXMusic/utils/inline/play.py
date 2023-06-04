@@ -1,20 +1,22 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL
-import sys
+import time
 
-# After Edits with Timer Bar
+def soundcloud_time_bar(duration, total_length=40):
+    bar_length = len(selections[0])
+    bar_unit = duration / total_length
+    completed_units = int(bar_unit * total_length)
+    remaining_units = total_length - completed_units
+    
+    completed_bar = selections[0] * completed_units
+    remaining_bar = selections[0][:bar_length - 1] + selections[1] * remaining_units
+    
+    time_bar = completed_bar + remaining_bar
+    return time_bar[:total_length]
 
-
-selections = [
-    "◉--------------------",
-    "--◉------------------",
-    "-----◉---------------",
-    "--------◉------------",
-    "-----------◉---------",
-    "--------------◉------",
-    "-----------------◉---",
-    "--------------------◉",
-]
+# Example usage
+duration = 120  # in seconds
+print(soundcloud_time_bar(duration))
 
 ## After Edits with Timer Bar
 
