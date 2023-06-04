@@ -1,28 +1,29 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL
-import time
+import sys
 
-def soundcloud_time_bar(duration, total_length=40):
-    bar_length = len(selections[0])
-    bar_unit = duration / total_length
-    completed_units = int(bar_unit * total_length)
-    remaining_units = total_length - completed_units
-    
-    completed_bar = selections[0] * completed_units
-    remaining_bar = selections[0][:bar_length - 1] + selections[1] * remaining_units
-    
-    time_bar = completed_bar + remaining_bar
-    return time_bar[:total_length]
-
-# Example usage
-duration = 120  # in seconds
-print(soundcloud_time_bar(duration))
+selections = [
+    "◉---------------------------------------",
+    "---◉------------------------------------",
+    "------◉---------------------------------",
+    "---------◉------------------------------",
+    "------------◉---------------------------",
+    "---------------◉------------------------",
+    "------------------◉---------------------",
+    "---------------------◉------------------",
+    "------------------------◉---------------",
+    "---------------------------◉------------",
+    "------------------------------◉---------",
+    "---------------------------------◉------",
+    "------------------------------------◉---",
+    "---------------------------------------◉",
+]
 
 ## After Edits with Timer Bar
 
 
 def stream_markup_timer(_, videoid, chat_id, played, dur):
-    bar = random.choice(selections)
+    bar = sys.choice(selections)
     buttons = [
         [
             InlineKeyboardButton(
