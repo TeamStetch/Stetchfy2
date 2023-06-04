@@ -1,6 +1,6 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL
-
+import random 
 selections = [
     "◉---------------------------------------",
     "---◉------------------------------------",
@@ -18,20 +18,16 @@ selections = [
     "---------------------------------------◉",
 ]
 
-# Initialize the index of the current selection
-current_selection_index = 0
-
 def stream_markup_timer(_, videoid, chat_id, played, dur):
-    # Get the current selection based on the index
-    current_selection = selections[current_selection_index]
-    
-    # Increment the index to select the next selection in the next function call
-    current_selection_index = (current_selection_index + 1) % len(selections)
-    
+    start_index = 5  # Line number to start from (0-based index)
+    end_index = 18   # Line number to end at (0-based index)
+    selections_to_show = selections[start_index : end_index+1]
+
+    bar = random.choice(selections_to_show)
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{current_selection}• {dur}",
+                text=f"{played} •{bar}• {dur}",
                 callback_data="GetTimer",
             )
         ],
