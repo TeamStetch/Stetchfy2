@@ -1,6 +1,5 @@
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import SUPPORT_GROUP, SUPPORT_CHANNEL
-import sys
 
 selections = [
     "◉---------------------------------------",
@@ -19,15 +18,20 @@ selections = [
     "---------------------------------------◉",
 ]
 
-## After Edits with Timer Bar
-
+# Initialize the index of the current selection
+current_selection_index = 0
 
 def stream_markup_timer(_, videoid, chat_id, played, dur):
-    bar = sys.choice(selections)
+    # Get the current selection based on the index
+    current_selection = selections[current_selection_index]
+    
+    # Increment the index to select the next selection in the next function call
+    current_selection_index = (current_selection_index + 1) % len(selections)
+    
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{played} •{bar}• {dur}",
+                text=f"{played} •{current_selection}• {dur}",
                 callback_data="GetTimer",
             )
         ],
