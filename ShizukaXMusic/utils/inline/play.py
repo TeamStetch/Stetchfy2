@@ -16,11 +16,9 @@ selections = [
     "--------------------◉",
 ]
 
-organized_selections = sorted(selections)
+index = 0  # Change this to the desired index
 
-for selection in organized_selections:
-    print(selection)
-
+bar = selections[index]
 
 ## After Edits with Timer Bar
 
