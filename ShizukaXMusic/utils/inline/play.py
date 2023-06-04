@@ -16,10 +16,6 @@ selections = [
     "--------------------◉",
 ]
 
-index = 0  # Change this to the desired index
-
-bar = selections[index]
-
 ## After Edits with Timer Bar
 
 
